@@ -263,7 +263,7 @@ public class ChatroomClient {
             int isLose = in.readInt();
             // System.out.println("isLose" + isLose);
             if (isLose == 1) {
-              // System.out.println("isLose" + isLose);
+              // System.out.println("!!!!!!!!!!!!!!!!!!!!!");
               shouldPlay = false;
             }
           }

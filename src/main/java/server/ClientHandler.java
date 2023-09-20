@@ -245,9 +245,11 @@ public class ClientHandler implements Runnable, Protocol {
           // game over
           writeBroadcastMessage("server",
               "game over. " + senderUsername + " lose. Final score is: " + playAddNumberScore);
-          out.writeInt(MessageIdentifier.PLAY_ADD_NUMBER_RECEIVE);
-          out.writeChar(' ');
-          out.writeInt(1);
+          for (ClientHandler c : clientHandlers.values()) {
+            c.out.writeInt(MessageIdentifier.PLAY_ADD_NUMBER_RECEIVE);
+            c.out.writeChar(' ');
+            c.out.writeInt(1);
+          }
           playAddNumberScore = 0;
         } else {
           // game continues
